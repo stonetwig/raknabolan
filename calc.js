@@ -21,12 +21,12 @@ $(function() {
       monthlyAmort = 0;
     }
 
-    var total = Math.floor(monthlyInterest + monthlyAmort);
+    var total = Math.floor(parseInt(monthlyInterest) + parseInt(monthlyAmort));
     var description = (years !== null && (amort === null || !amort)) ?
       "Med <strong>" + years + "</strong> års avbetalningsplan och en ränta på <strong>ca " + interest + "%</strong> så kommer du betala ca:" :
-      "Med en månadsammortering på <strong>" + monthlyAmort + " KR</strong> så kommer du betala ca:";
+      "Med en månadsamortering på <strong>" + monthlyAmort + " KR</strong> så kommer du betala ca:";
 
-    resultbox.html("<p>" + description + "</p><p class='resultNumber'>" + total + " KR i MÅNADEN</p><p>Varav " + monthlyInterest + "kr är ränta och " + monthlyAmort + "kr är ammortering</p>");
+    resultbox.html("<p>" + description + "</p><p class='resultNumber'>" + total + " KR i MÅNADEN</p><p>Varav " + monthlyInterest + "kr är ränta och " + monthlyAmort + "kr är amortering</p>");
     resultbox.show();
   });
 
