@@ -3,10 +3,10 @@ $(function() {
   resultbox.hide();
 
   $('#calc').on('click', function(event) {
-    var amount = $('#amount').val().replace(/\s+/g, '').replace(',', '.') || 200000;
-    var interest = $('#interest').val().replace(/\s+/g, '').replace(',', '.') || 2;
-    var years = $('#years').val() || null;
-    var amort = $('#amort').val().replace(/\s+/g, '').replace(',', '.') || null;
+    var amount = parseInt($('#amount').val().replace(/\s+/g, '').replace(',', '.')) || 200000;
+    var interest = parseInt($('#interest').val().replace(/\s+/g, '').replace(',', '.')) || 2;
+    var years = parseInt($('#years').val()) || null;
+    var amort = parseInt($('#amort').val().replace(/\s+/g, '').replace(',', '.')) || null;
 
     var percentInterest = interest * 0.01;
     var monthlyInterest = (amount * percentInterest) / 12;
